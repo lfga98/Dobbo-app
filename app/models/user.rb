@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates_presence_of :first_name, :last_name, :maternal_surname, :number
-  validates :number, length: { is: 10 }
-  validates :number, numericality: { only_integer: true }
+  validates_presence_of :first_name, :last_name, :maternal_surname, :telephone
+  validates :telephone, length: { is: 10 }
+  validates :telephone, numericality: { only_integer: true }
 end
