@@ -1,0 +1,22 @@
+<nav class="navbar navbar-inverse">
+ <div class="container-fluid">
+   <div class="navbar-header">
+     <a class="navbar-brand" href="#">DOBBO</a>
+   </div>
+   <ul class="nav navbar-nav">
+     <li class="active">
+			 <%= link_to "", root_path, class: 'glyphicon glyphicon-home' %>
+		 </li>
+     <li><a href="#">Page 1</a></li>
+     <li><a href="#">Page 2</a></li>
+   </ul>
+   <ul class="nav navbar-nav navbar-right">
+		 <li>
+			 <%= link_to "", edit_user_registration_path, class: 'glyphicon glyphicon-user' %>
+		 </li>
+     <li>
+			 <%= link_to "", destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out' %>
+			</li>
+   </ul>
+ </div>
+</nav>
