@@ -4,9 +4,9 @@ require 'rails_helper'
 
 describe 'navigate' do
   describe 'homepage' do
-    it 'can be reached successfully' do
+    it 'cant be reached by a non logged user' do
       visit root_path
-      expect(page.status_code).to eq(200)
+      expect(current_path).to eq(new_user_session_path)
     end
   end
 end

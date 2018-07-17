@@ -18,7 +18,7 @@ describe 'user navigation' do
       fill_in 'user[maternal_surname]', with: "Acosta"
       fill_in 'user[telephone]', with: "4921509646"
       click_on "Enviar"
-      expect(page).to have_content("Welcome")
+      expect(page).to have_content("Menu")
     end
 
   end
