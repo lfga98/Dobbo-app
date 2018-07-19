@@ -17,6 +17,10 @@ describe 'navigate' do
       visit patients_path
       expect(page).to have_content("Leonardo")
     end
+    it 'a patient can be created from a page' do
+      visit new_patient_path
+      expect(page.status_code).to eq(200)
+    end
 
   end
 end

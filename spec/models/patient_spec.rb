@@ -9,6 +9,8 @@ RSpec.describe Patient, type: :model do
     it "can be created" do
       expect(@patient).to be_valid
     end
+
+    
   end
 
 
