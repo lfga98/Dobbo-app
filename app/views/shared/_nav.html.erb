@@ -9,13 +9,16 @@
 		 </li>
    </ul>
    <ul class="nav navbar-nav navbar-right">
-
+     <li><a>
+       <%=current_user.full_name%>
+     </a>
+   </li>
 		 <li >
 			 <%= link_to "", edit_user_registration_path, class: 'glyphicon glyphicon-user' %>
 		 </li>
      <li>
 			 <%= link_to "", destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out' %>
-			</li>
+		</li>
  	</ul>
  </div>
 </nav>
