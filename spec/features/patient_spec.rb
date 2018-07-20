@@ -3,10 +3,10 @@ require 'rails_helper'
 describe 'navigate' do
 
   before do
-    user = User.create(id: 1,email: "test@test.com",password: "asdfasdf",password_confirmation: "asdfasdf", first_name: "Luis", last_name: "Garcia", maternal_surname: "Acosta",telephone:"1234567890")
+    user = User.create(email: "test@test.com",password: "asdfasdf",password_confirmation: "asdfasdf", first_name: "Luis", last_name: "Garcia", maternal_surname: "Acosta",telephone:"1234567890")
     login_as(user, :scope => :user)
 
-    @patient=Patient.create(first_name:"Leonardo",last_name: "Garcia", maternal_surname: "Acosta",age:10,date_birth: Date.today , user_id: 1)
+    @patient=Patient.create(first_name:"Leonardo",last_name: "Garcia", maternal_surname: "Acosta",age:10,date_birth: Date.today, user_id: user.id )
   end
 
   describe 'index' do
@@ -40,13 +40,13 @@ describe 'navigate' do
       expect { click_on "Guardar" }.to change(Patient, :count).by(1)
     end
     it 'will have a user associated it' do
-      fill_in 'patient[first_name]', with:  'Rosa Nelly'
+      fill_in 'patient[first_name]', with:  "Rosa Nelly"
       fill_in 'patient[last_name]', with:  'Acosta'
       fill_in 'patient[maternal_surname]', with:  'Becerra'
       fill_in 'patient[age]', with: 24
       fill_in 'patient[date_birth]', with: Date.today
       click_on "Guardar"
-      expect(User.last.patient.last.first_name).to eq("Rosa Nelly ")
+      expect(User.last.patients.last.first_name).to eq("Rosa Nelly")
     end
   end
 end

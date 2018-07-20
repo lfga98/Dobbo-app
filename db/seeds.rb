@@ -4,5 +4,7 @@ end
 
 user = User.create(email: "test@test.com",password: "asdfasdf",password_confirmation: "asdfasdf", first_name: "Luis", last_name: "Garcia", maternal_surname: "Acosta",telephone:"1234567890")
 
-puts "created 1 user"
+user = User.create(email: "user@test.com",password: "asdfasdf",password_confirmation: "asdfasdf", first_name: "Luis", last_name: "Garcia", maternal_surname: "Acosta",telephone:"1234567890")
+
+puts "created 2 user"
 puts "created 10 patients"
