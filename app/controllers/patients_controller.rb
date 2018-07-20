@@ -1,4 +1,5 @@
 class PatientsController < ApplicationController
+
   def index
     @patients = Patient.all
   end
@@ -9,9 +10,8 @@ class PatientsController < ApplicationController
 
   def create
     @patient= Patient.new(patient_params)
+    @patient.user_id = current_user.id
     @patient.save
-
-
   end
 
   private
