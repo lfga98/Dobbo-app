@@ -1,3 +1,10 @@
 <%= render 'shared/nav'%>
-<h1> Informacion de los pacientes </h1>
-<%= @patients.inspect%>
+<div class="container-fluid">
+    <%= render 'shared/sidenavbar'%>
+<div class="row">
+  <div class="col-lg-6">
+    <h1> Informacion de los pacientes </h1>
+    <%= @patients.inspect%>
+  </div>
+</div>
+</div>
