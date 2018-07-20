@@ -1,5 +1,8 @@
 <div class="row">
-  <div class="col-lg-6">
+  <div class="col-lg-8">
+
+        <h2> Nuevo Paciente</h2>
+        <br>
 <%= form_for @patient, class: "form-horizontal" do |f| %>
   <% if @patient.errors.any?%>
     <% @patient.errors.full_messages.each do |error|%>
@@ -21,15 +24,14 @@
   </div>
 
   <div class="form-group">
-  	<%= f.label :edad, class: "col-sm-2 control-label" %>
-  	<%= f.number_field  :age, class: "form-control" %>
+    <%= f.label :fecha_de_nacimiento, class: "col-sm-4 control-label" %>
+    <%= f.date_field  :date_birth, class: "form-control " %>
   </div>
 
   <div class="form-group">
-    <%= f.label :fecha_de_nacimiento, class: "col-sm-2 control-label" %>
-    <%= f.date_field  :date_birth, class: "form-control" %>
+    <%= f.label :edad, class: "col-sm-4 control-label" %>
+    <%= f.number_field  :age, class: "form-control" %>
   </div>
-
 
   <div class="form-group">
     <%= f.submit 'Guardar', class: 'btn btn-primary' %>
