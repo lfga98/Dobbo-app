@@ -49,4 +49,19 @@ describe 'navigate' do
       expect(User.last.patients.last.first_name).to eq("Rosa Nelly")
     end
   end
+
+  describe "Modification" do
+    before do
+      visit edit_patient_path(@patient)
+    end
+
+    it 'has an edit page for patient' do
+      expect(page.status_code).to eq(200)
+    end
+
+  end
+
+
+
+
 end

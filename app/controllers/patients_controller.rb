@@ -14,6 +14,10 @@ class PatientsController < ApplicationController
     @patient.save
   end
 
+  def edit
+    @patient=Patient.find(params[:id])
+  end
+
   private
 
   def patient_params
