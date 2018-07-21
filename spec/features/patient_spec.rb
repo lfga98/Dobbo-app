@@ -58,6 +58,12 @@ describe 'navigate' do
     it 'has an edit page for patient' do
       expect(page.status_code).to eq(200)
     end
+    it 'has an edit form' do
+        fill_in 'patient[first_name]', with:  "Calixto"
+        click_on "Guardar"
+        expect(User.last.patients.last.first_name).to eq("Calixto")
+    end
+
 
   end
 

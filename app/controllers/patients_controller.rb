@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  before_action :set_patient, only: [:edit]
+  before_action :set_patient, only: [:edit,:update]
 
   def index
     @patients = Patient.all
@@ -16,6 +16,12 @@ class PatientsController < ApplicationController
   end
 
   def edit
+
+  end
+
+  def update
+
+    @patient.update(patient_params)
 
   end
 
