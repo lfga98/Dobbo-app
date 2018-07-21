@@ -1,4 +1,5 @@
 class PatientsController < ApplicationController
+  before_action :set_patient, only: [:edit]
 
   def index
     @patients = Patient.all
@@ -15,7 +16,7 @@ class PatientsController < ApplicationController
   end
 
   def edit
-    @patient=Patient.find(params[:id])
+
   end
 
   private
@@ -24,6 +25,9 @@ class PatientsController < ApplicationController
     params.require(:patient).permit(:first_name,:last_name,:maternal_surname,:age,:date_birth)
   end
 
+  def set_patient
+    @patient=Patient.find(params[:id])
+  end
 
 
 end
