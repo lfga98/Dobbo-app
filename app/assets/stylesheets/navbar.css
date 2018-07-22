@@ -1,0 +1,17 @@
+.navbar {
+
+     background-color: #000d1a;
+}
+.navbar-font{
+  font-family: Arial;
+  font-weight: bold;
+}
+.font-color{
+  color: white;
+}
+a:hover {
+    color: gray;
+}
+.sidebar-color{
+   color: #51555b;
+}
