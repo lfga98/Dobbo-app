@@ -3,14 +3,9 @@
         <%= patient.id%>
       </td>
       <td>
-        <%= patient.first_name%>
-      </td>
-      <td>
-        <%= patient.last_name%>
-      </td>
-      <td>
-        <%= patient.maternal_surname%>
-      </td>
+         <%= link_to truncate(patient.full_name),patient %>
+       </td>
+
       <td>
         <%= link_to "" , edit_patient_path(patient), id:"edit_#{patient.id}", class: 'btn btn-warning glyphicon glyphicon-pencil'%>
       </td>
@@ -18,6 +13,6 @@
         <%= link_to "" , patient_path(patient),method: :delete, id:"edit_#{patient.id}", class: 'btn btn-danger glyphicon glyphicon-remove '%>
       </td>
       <td>
-        <%= link_to "Info" , patient_path(patient),method: :delete, id:"edit_#{patient.id}", class: 'btn btn-info '%>
+        <%= link_to "Info" , patient_path(patient),method: :delete, id:"edit_#{patient.id}", class: 'btn btn-info ', data: { confirm: '¿Seguro que quiere eliminar este paciente?' }%>
       </td>
 </tr>

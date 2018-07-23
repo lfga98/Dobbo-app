@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  before_action :set_patient, only: [:edit,:update,:show]
+  before_action :set_patient, only: [:edit,:update,:show,:destroy]
 
   def index
     @patients = Patient.all
@@ -21,16 +21,17 @@ class PatientsController < ApplicationController
 
   def show
   end
-
-
   def edit
-
   end
 
+  def destroy
+    @patient.destroy
+    redirect_to patients_path, notice: 'El paciente fue eliminado!'
+  end
+
+
   def update
-
     @patient.update(patient_params)
-
   end
 
   private
