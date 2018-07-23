@@ -10,7 +10,7 @@
         <%= link_to "" , edit_patient_path(patient), id:"edit_#{patient.id}", class: 'btn btn-warning glyphicon glyphicon-pencil'%>
       </td>
       <td>
-        <%= link_to "" , patient_path(patient),method: :delete, id:"edit_#{patient.id}", class: 'btn btn-danger glyphicon glyphicon-remove '%>
+        <%= link_to "" , patient_path(patient),method: :delete, id:"edit_#{patient.id}", class: 'btn btn-danger glyphicon glyphicon-remove ',data: { confirm: '¿Seguro que quiere eliminar este paciente?' }%>
       </td>
       <td>
         <%= link_to "Info" , patient_path(patient),method: :delete, id:"edit_#{patient.id}", class: 'btn btn-info ', data: { confirm: '¿Seguro que quiere eliminar este paciente?' }%>

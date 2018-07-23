@@ -13,7 +13,7 @@ class PatientsController < ApplicationController
     @patient= Patient.new(patient_params)
     @patient.user_id = current_user.id
     if @patient.save
-      redirect_to @patient, notice: "El paciente fue añadido!"
+      redirect_to @patient, notice: "El paciente fue añadido satisfactoriamente!"
     else
       render :new
     end
@@ -26,12 +26,16 @@ class PatientsController < ApplicationController
 
   def destroy
     @patient.destroy
-    redirect_to patients_path, notice: 'El paciente fue eliminado!'
+    redirect_to patients_path, notice: 'El paciente fue eliminado satisfactoriamente!'
   end
 
 
   def update
-    @patient.update(patient_params)
+    if @patient.update(patient_params)
+      redirect_to @patient,notice: 'El paciente fue modificado satisfactoriamente'
+    else
+      render :edit
+    end
   end
 
   private

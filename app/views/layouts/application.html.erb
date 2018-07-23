@@ -8,9 +8,10 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  
+
 
   <body>
     <%= yield %>
+    <%= js add_gritter(flash[:notice], title: "Notificacion de Dobbo", sticky: false) %>
   </body>
 </html>
