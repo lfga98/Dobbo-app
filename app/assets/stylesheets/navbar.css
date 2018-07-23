@@ -1,6 +1,5 @@
 .navbar {
-
-     background-color: #000d1a;
+  background-color: #000d1a;
 }
 .navbar-font{
   font-family: Arial;
@@ -11,7 +10,16 @@
 }
 a:hover {
     color: gray;
+    background-color: #000d1a;
+}
+ul li ul li:hover {
+    color: gray;
+    background-color: #000d1a;
 }
 .sidebar-color{
    color: #51555b;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #000000;
+    color: #d6d4d4;
 }

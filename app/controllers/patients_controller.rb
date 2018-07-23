@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  before_action :set_patient, only: [:edit,:update]
+  before_action :set_patient, only: [:edit,:update,:show]
 
   def index
     @patients = Patient.all
@@ -12,8 +12,16 @@ class PatientsController < ApplicationController
   def create
     @patient= Patient.new(patient_params)
     @patient.user_id = current_user.id
-    @patient.save
+    if @patient.save
+      redirect_to @patient, notice: "El paciente fue añadido!"
+    else
+      render :new
+    end
   end
+
+  def show
+  end
+
 
   def edit
 
