@@ -1,11 +1,11 @@
-<nav class="navbar navbar navbar-default " >
+<nav class="navbar mynav navbar-default " >
  <div class="container-fluid">
    <div class="navbar-header">
-     <a class="navbar-brand font-color" >DOBBO</a>
+     <a class="navbar-brand font-color " >DOBBO</a>
    </div>
    <ul class="nav navbar-nav">
-     <li class="active">
-			 <%= link_to "", root_path, class: 'glyphicon glyphicon-home  font-color' %>
+     <li class="<%=active?(root_path)%>">
+			 <%= link_to "", root_path, class: 'glyphicon glyphicon-home font-color', :style=> 'color:#FFFFFF;' %>
 		 </li>
    </ul>
    <ul class="nav navbar-nav navbar-right">
@@ -13,11 +13,11 @@
        <%=current_user.full_name%>
      </a>
    </li>
-		 <li >
-			 <%= link_to "", edit_user_registration_path, class: 'glyphicon glyphicon-user font-color' %>
+		 <li class="<%=active?(edit_user_registration_path)%>">
+			 <%= link_to "", edit_user_registration_path, class: 'glyphicon glyphicon-user font-color', :style=> 'color:#FFFFFF;' %>
 		 </li>
-     <li>
-			 <%= link_to "", destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out font-color' %>
+     <li >
+			 <%= link_to "", destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out font-color', :style=> 'color:#FFFFFF;' %>
 		</li>
  	</ul>
  </div>
