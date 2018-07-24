@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'navigate' do
 
   before do
-    user = User.create(email: "test@test.com",password: "asdfasdf",password_confirmation: "asdfasdf", first_name: "Luis", last_name: "Garcia", maternal_surname: "Acosta",telephone:"1234567890")
+    user = User.create(email: "test@test.com",password: "asdfasdf",password_confirmation: "asdfasdf", first_name: "Luis", last_name: "Garcia", maternal_surname: "Acosta",telephone:"1234567890",street:"Villa del nogal",number:12,city:"Zacatecas",mun:"Guadalupe",country:"México",tittle:"Licenciado en Nutrición",suburb:"Villas de Guadalupe",cp:98612)
     login_as(user, :scope => :user)
 
     @patient=Patient.create(first_name:"Leonardo",last_name: "Garcia", maternal_surname: "Acosta",age:10,date_birth: Date.today, user_id: user.id )
@@ -12,7 +12,7 @@ describe 'navigate' do
   describe 'index' do
     it 'can be reached successfully' do
       visit patients_path
-      expect(page).to have_content("Informacion")
+      expect(page).to have_content("pacientes")
     end
     it 'has de information of the patient' do
       visit patients_path
@@ -63,8 +63,6 @@ describe 'navigate' do
         click_on "Guardar"
         expect(User.last.patients.last.first_name).to eq("Calixto")
     end
-
-
   end
 
 

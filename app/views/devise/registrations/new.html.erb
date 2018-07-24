@@ -1,6 +1,9 @@
 <%= render "devise/shared/navregis",:locals => {:action=>"Registro de nuevo usuario"}  %>
 <div class="jumbotron well">
-  La presente pantalla es para el registro de un nuevo usuario
+  <h5> El presente formulario es para registarse como nuevo usuario, los datos necesarios
+    son sus datos personales, los datos de su consultorio o en donde realiza las consultas ya que
+    se ocupan para los reportes y su correro y una contraseña
+  </h5>
 </div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -25,6 +28,11 @@
       </div>
 
       <div class="field">
+        <%= f.label :grado_o_titulo %><br />
+        <%= f.text_field :tittle, autofocus: true, autocomplete: "off", class: "form-control" %>
+      </div>
+
+      <div class="field">
         <%= f.label :numero_telefonico %><br />
         <%= f.text_field :telephone, autofocus: true, autocomplete: "off", class: "form-control" %>
       </div>
@@ -45,6 +53,11 @@
       </div>
 
       <div class="field">
+        <%= f.label :colonia %><br />
+        <%= f.text_field :suburb, autofocus: true, autocomplete: "off" ,class: "form-control"%>
+      </div>
+
+      <div class="field">
         <%= f.label :municipio %><br />
         <%= f.text_field :mun, autofocus: true, autocomplete: "off",class: "form-control" %>
       </div>
@@ -57,6 +70,11 @@
       <div class="field">
         <%= f.label :país %><br />
         <%= f.text_field :country, autofocus: true, autocomplete: "off" ,class: "form-control"%>
+      </div>
+
+      <div class="field">
+        <%= f.label :codigo_postal %><br />
+        <%= f.text_field :cp, autofocus: true, autocomplete: "off" ,class: "form-control"%>
       </div>
     </div>
   </div>
