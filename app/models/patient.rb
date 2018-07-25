@@ -5,6 +5,11 @@ class Patient < ApplicationRecord
   validates :telephone, length: { is: 10 }
   validates :telephone, numericality: { only_integer: true }
 
+  def self.search(search)
+    where("first_name ILIKE ? OR id::varchar ILIKE ? ",
+      "%#{search}%", "%#{search}%")
+    end
+
     def full_name
       return first_name + " " + last_name + " " +maternal_surname
     end
