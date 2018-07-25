@@ -2,24 +2,97 @@
 <div class="container-fluid">
     <%= render 'shared/sidenavbar'%>
   <div class="row">
-    <h1 class="tittle"> Datos personales</h1>
+
     <div class="col-lg-8">
-      <div class="well">
-        <div>
-            <h2><%= @patient.full_name %> </h2>
+      <div>
+            <h2 align="center" class="tittle"><%= @patient.full_name %> </h2>
         </div>
-        <hr>
-          <div>
-      		    <h4><span>Número de paciente:</span> <%= @patient.id %></h4>
+        <div class="col-lg-12">
+            <br>
+            <br>
+            <h3>Datos Generales</h3>
+            <hr>
+        </div>
+          <div class="col-lg-4">
+      		    <h4><strong>Número de paciente</strong></h4> <%= @patient.id %>
           </div>
-          <div>
-      		    <h4><span>Edad:</span> <%= @patient.age %></h4>
+          <div class="col-lg-4">
+      		    <h4><strong>Edad</strong></h4> <%= @patient.age %>
           </div>
-          <div>
-      		    <h4><span>Fecha de nacimiento:</span> <%= @patient.date_birth %></h4>
+          <div class="col-lg-4">
+      		    <h4><strong>Fecha de nacimiento</strong></h4> <%= @patient.date_birth %>
           </div>
-      </div>
-      <%= link_to 'Editar', edit_patient_path(@patient), class: 'btn btn-primary' %>
+          <div class="col-lg-4">
+            <br>
+      		    <h4><strong>Sexo</strong></h4> <%= @patient.gender %>
+          </div>
+          <div class="col-lg-4">
+            <br>
+      		    <h4><strong>Escolaridad</strong></h4> <%= @patient.scholarship  %>
+          </div>
+          <div class="col-lg-4">
+            <br>
+      		    <h4><strong>Ocupación</strong></h4> <%= @patient.occupation  %>
+          </div>
+          <div class="col-lg-4">
+            <br>
+              <h4><strong>Estado civil:</strong></h4> <%= @patient.civil_status  %>
+          </div>
+          <div class="col-lg-4">
+            <br>
+      		    <h4><strong>Telefono:</strong></h4> <%= @patient.telephone  %>
+          </div>
+          <div class="col-lg-4">
+            <br>
+              <h4><strong>Correo Electronico:</strong></h4> <%= @patient.email  %>
+          </div>
+
+
+          <div class="col-lg-12">
+              <br>
+              <br>
+              <h3>Domicilio</h3>
+              <hr>
+          </div>
+          <div class="col-lg-4">
+            <h4><strong>Calle</strong></h4> <%= @patient.street  %>
+          </div>
+          <div class="col-lg-4">
+            <h4><strong>Colonia</strong></h4> <%= @patient.suburb  %>
+          </div>
+          <div class="col-lg-4">
+            <h4><strong>Ciudad</strong></h4> <%= @patient.city  %>
+          </div>
+          <div class="col-lg-4">
+            <br>
+            <h4><strong>Estado</strong></h4> <%= @patient.county  %>
+          </div>
+          <div class="col-lg-4">
+            <br>
+            <h4><strong>País</strong></h4> <%= @patient.county  %>
+          </div>
+
+          <div class="col-lg-12">
+              <br>
+              <br>
+              <h3>Motivo de visita</h3>
+              <hr>
+          </div>
+          <div class="col-lg-10 col-md-offset-1 ">
+            <br>
+          </h4> <%= @patient.reason_desc  %>
+          </div>
+
     </div>
+
   </div>
+    <div class="col-lg-10 col-md-offset-10 ">
+      <br>
+      <br>
+      <%= link_to 'Eliminar', patient_path(@patient), method: :delete, class: 'btn btn-danger',data: { confirm: '¿Seguro que quiere eliminar este paciente?' } %>
+      <%= link_to 'Editar', edit_patient_path(@patient), class: 'btn btn-primary' %>
+      <br>
+      <br>
+    </div>
+
 </div>
