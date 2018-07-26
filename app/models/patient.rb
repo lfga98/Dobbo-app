@@ -8,9 +8,14 @@ class Patient < ApplicationRecord
   def self.search(search)
     where("first_name ILIKE ? OR id::varchar ILIKE ? OR last_name ILIKE ? or maternal_surname ILIKE ? ",
       "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
-    end
+  end
 
-    def full_name
-      return first_name + " " + last_name + " " +maternal_surname
-    end
+  def calculate_years
+    return ((patient.date_birth - Date.today) / 365).floor
+
+  end
+
+  def full_name
+    return first_name + " " + last_name + " " +maternal_surname
+  end
 end

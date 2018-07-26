@@ -24,16 +24,18 @@
         <%= f.text_field  :maternal_surname, class: "form-control" %>
       </div>
 
-      <div class="form-group col-lg-8">
+      <div class="form-group">
         <%= f.label :"fecha_de_nacimiento*", class: "col-sm-4 control-label" %>
         <%= f.date_field  :date_birth, class: "form-control " %>
+
       </div>
 
-      <div class="form-group col-lg-4">
+      <% if !@patient.age.nil? %>
+      <div class="form-group">
         <%= f.label :edad, class: "col-sm-4 control-label" %>
-        <%= f.number_field  :age, class: "form-control" %>
+        <%= f.number_field  :age, class: "form-control",disabled: true %>
       </div>
-
+      <%end%>
       <div class="form-group col-lg-8">
         <br>
         <%= f.label :"estado_civil*", class: "col-sm-4 control-label" %>
@@ -90,7 +92,7 @@
         <%= f.label :"estado*", class: "col-sm-4 control-label" %>
         <%= f.text_field  :county, class: "form-control" %>
       </div>
-    
+
       <div class="form-group">
         <br>
         <br>
