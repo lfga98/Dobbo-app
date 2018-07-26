@@ -12,13 +12,10 @@
         <%= form_tag patients_path, :method => 'get' do %>
           <p>
             <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag "Search", :name => nil %>
+            <%= submit_tag "Buscar", :name => nil %>
           </p>
         <% end %>
       </div>
-
-
-
         <tr>
           <th scope="col">No. Paciente</th>
           <th scope="col">Nombre completo</th>
@@ -35,11 +32,8 @@
           <%= render @patients %>
         </tbody>
     </table>
-    <%= paginate @patients %>
-
-
-
-
+      <div class="col-md-offset-4">
+        <%= paginate @patients %>
+    </div>
   </div>
-</div>
 </div>
