@@ -6,8 +6,8 @@ class Patient < ApplicationRecord
   validates :telephone, numericality: { only_integer: true }
 
   def self.search(search)
-    where("first_name ILIKE ? OR id::varchar ILIKE ? ",
-      "%#{search}%", "%#{search}%")
+    where("first_name ILIKE ? OR id::varchar ILIKE ? OR last_name ILIKE ? or maternal_surname ILIKE ? ",
+      "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
     end
 
     def full_name
