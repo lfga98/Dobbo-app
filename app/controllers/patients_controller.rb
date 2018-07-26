@@ -2,8 +2,7 @@ class PatientsController < ApplicationController
   before_action :set_patient, only: [:edit,:update,:show,:destroy]
 
   def index
-    @patients = Patient.all
-
+    @patients = current_user.patients.order("id ")
     if params[:search]
         @patients = Patient.search(params[:search])
     end
