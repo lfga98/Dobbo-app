@@ -1,6 +1,6 @@
 class Patient < ApplicationRecord
   belongs_to :user,optional: true
-  validates_presence_of :first_name,:last_name,:age,:date_birth,:maternal_surname,:gender,:civil_status, :scholarship, :occupation, :street, :suburb, :city , :mun, :county , :telephone
+  validates_presence_of :first_name,:last_name,:date_birth,:maternal_surname,:gender,:civil_status, :scholarship, :occupation, :street, :suburb, :city , :mun, :county , :telephone
 
   validates :telephone, length: { is: 10 }
   validates :telephone, numericality: { only_integer: true }
@@ -10,10 +10,7 @@ class Patient < ApplicationRecord
       "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
   end
 
-  def calculate_years
-    return ((patient.date_birth - Date.today) / 365).floor
 
-  end
 
   def full_name
     return first_name + " " + last_name + " " +maternal_surname
