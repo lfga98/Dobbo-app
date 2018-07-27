@@ -25,7 +25,7 @@ class PatientsController < ApplicationController
   end
 
   def show
-    @patient.age=((Date.today - @patient.date_birth)/365).floor
+      @patient.age=((Date.today - @patient.date_birth)/365).floor
   end
   def edit
     @patient.age=( Date.today.year - @patient.date_birth.year).floor
@@ -53,7 +53,12 @@ class PatientsController < ApplicationController
   end
 
   def set_patient
-    @patient=Patient.find(params[:id])
+      @patient=Patient.find(params[:id])
+    if @patient.user_id == current_user.id
+    else
+      redirect_to patients_path, notice: "No tiene permiso para realizar esta acción"
+    end
+
   end
 
 
