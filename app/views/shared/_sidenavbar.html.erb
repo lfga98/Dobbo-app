@@ -7,12 +7,12 @@
       <li class="<%=active?(patients_path)%>"><%= link_to "Todos los pacientes", patients_path,class:"sidebar-color"%></li>
       <li class="<%=active?(new_patient_path)%>"><%= link_to "Nuevo paciente", new_patient_path, class:"sidebar-color"%></li>
     </ul>
-    <h5><i class="glyphicon glyphicon-user"></i>
-      <small><b>USERS</b></small>
+    <h5><i class="glyphicon  glyphicon glyphicon-calendar "></i>
+      <small><b>CITAS</b></small>
     </h5>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#">List</a></li>
-      <li><a href="#">Manage</a></li>
+      <li class="<%=active?(patients_path)%>"><%= link_to "Todas las citas", appointments_path,class:"sidebar-color"%></li>
+      <li class="<%=active?(new_appointment_path)%>"><%= link_to "Nueva Cita",new_appointment_path, class:"sidebar-color"%></li>
     </ul>
   </div>
 </div>
