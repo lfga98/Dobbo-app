@@ -11,7 +11,7 @@
       <small><b>CITAS</b></small>
     </h5>
     <ul class="nav nav-pills nav-stacked">
-      <li class="<%=active?(patients_path)%>"><%= link_to "Todas las citas", appointments_path,class:"sidebar-color"%></li>
+      <li class="<%=active?(appointments_path)%>"><%= link_to "Todas las citas", appointments_path,class:"sidebar-color"%></li>
       <li class="<%=active?(new_appointment_path)%>"><%= link_to "Nueva Cita",new_appointment_path, class:"sidebar-color"%></li>
     </ul>
   </div>
