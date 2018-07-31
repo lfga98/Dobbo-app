@@ -1,13 +1,33 @@
 require 'rails_helper'
 
 RSpec.describe Appointment, type: :model do
+  let(:patient) do
+      Patient.create(
+        first_name:"Leonardo",
+        last_name: "Garcia",
+        maternal_surname: "Acosta",
+        age:16,
+        date_birth: Date.today,
+        gender: "Hombre",
+        civil_status:"Soltero",
+        scholarship:"Primaria" ,
+        occupation: "Constructor",
+        street: "Villa del nogal",
+        suburb: "Villas de guadalupe",
+        city: "Guadalupe",
+        mun: "Guadalupe",
+        county: "Zacatecas",
+        telephone: "4921783456",
+        email: "Leonardo@gmail.com",
+        reason_desc:"Adios")
+  end
   let(:appointment) do
       Appointment.create(
-        start_date: Date.today+"10:00:00",
-        end_date: Date.today+"15:00:00",
+        start_date: "5-07-2018 10:00:00",
+        end_date: "5-07-2018 15:00:00",
         name: "Juanito",
-        patient_id: 1
-        )
+        patient_id: patient.id
+      )
   end
 
   describe "creation" do
