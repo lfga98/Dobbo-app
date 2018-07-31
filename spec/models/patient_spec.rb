@@ -39,10 +39,6 @@ RSpec.describe Patient, type: :model do
       patient.maternal_surname = nil
       expect(patient).to_not be_valid
     end
-    it "has to have an age " do
-      patient.age = nil
-      expect(patient).to_not be_valid
-    end
     it "has to have a date of birth" do
       patient.date_birth = nil
       expect(patient).to_not be_valid

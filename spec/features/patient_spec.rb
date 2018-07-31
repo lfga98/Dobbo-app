@@ -2,10 +2,11 @@ require 'rails_helper'
 
 describe 'navigate' do
 
+  
   before do
-    user = User.create(email: "test@test.com",password: "asdfasdf",password_confirmation: "asdfasdf", first_name: "Luis", last_name: "Garcia", maternal_surname: "Acosta",telephone:"1234567890",street:"Villa del nogal",number:12,city:"Zacatecas",mun:"Guadalupe",country:"México",tittle:"Licenciado en Nutrición",suburb:"Villas de Guadalupe",cp:98612)
+    @user = User.create(email: "test@test.com",password: "asdfasdf",password_confirmation: "asdfasdf", first_name: "Luis", last_name: "Garcia", maternal_surname: "Acosta",telephone:"1234567890",street:"Villa del nogal",number:12,city:"Zacatecas",mun:"Guadalupe",country:"México",tittle:"Licenciado en Nutrición",suburb:"Villas de Guadalupe",cp:98612)
 
-    login_as(user, :scope => :user)
+    login_as(@user, :scope => :user)
 
     @patient=Patient.create(
       first_name:"Leonardo",
@@ -24,7 +25,9 @@ describe 'navigate' do
       county: "Zacatecas",
       telephone: "4921783456",
       email: "Leonardo@gmail.com",
-      reason_desc:"Adios")
+      reason_desc:"Adios",
+      number:12,
+      user_id:@user.id)
   end
 
   describe 'index' do
@@ -32,7 +35,8 @@ describe 'navigate' do
       visit patients_path
       expect(page).to have_content("pacientes")
     end
-    it 'has de information of the patient' do
+
+    it 'has the information of the patient' do
       visit patients_path
       expect(page).to have_content(@patient.first_name)
     end
@@ -85,7 +89,6 @@ describe 'navigate' do
 
   describe "Modification" do
     before do
-      
       visit edit_patient_path(@patient)
     end
 
