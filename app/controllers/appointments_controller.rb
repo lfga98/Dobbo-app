@@ -1,6 +1,12 @@
 class AppointmentsController < ApplicationController
   protect_from_forgery with: :null_session
 
+  def index
+    @appointments = Appointment.all
+  end
+
+
+
   def show
   end
 

@@ -1,0 +1,24 @@
+<tr>
+      <td>
+        <%= appointment.id%>
+      </td>
+      <td>
+         <%= link_to truncate(appointment.name),appointment %>
+       </td>
+       <td>
+          <%=  appointment.start_date %>
+        </td>
+        <td >
+           <%= appointment.end_date %>
+         </td>
+
+      <td>
+        <%= link_to "" , edit_appointment_path(appointment), id:"edit_#{appointment.id}", class: 'btn btn-warning glyphicon glyphicon-pencil'%>
+      </td>
+      <td>
+        <%= link_to "" , appointment_path(appointment),method: :delete, id:"edit_#{appointment.id}", class: 'btn btn-danger glyphicon glyphicon-remove ',data: { confirm: '¿Seguro que quiere eliminar este paciente?' }%>
+      </td>
+      <td>
+        <%= link_to "Consulta" , appointment_path(appointment),method: :delete, id:"edit_#{appointment.id}", class: 'btn btn-info ', data: { confirm: '¿Seguro que quiere eliminar este paciente?' }%>
+      </td>
+</tr>

@@ -12,11 +12,11 @@ describe 'navigate' do
   describe 'index' do
     it 'can be reached successfully' do
       visit appointments_path
-      expect(page).to have_content("Citas")
+      expect(page).to have_content("Todas las citas ")
     end
 
     it 'has the information of the patient' do
-      visit patients_path
+      visit appointments_path
       expect(page).to have_content(@appointment.name)
     end
 
