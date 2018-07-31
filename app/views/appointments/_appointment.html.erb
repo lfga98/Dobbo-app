@@ -1,15 +1,15 @@
 <tr>
       <td>
-        <%= appointment.id%>
+        <%=  appointment.start_date.strftime("%Y/%m/%d") %>
       </td>
       <td>
          <%= link_to truncate(appointment.name),appointment %>
        </td>
        <td>
-          <%=  appointment.start_date %>
+         <%=  appointment.start_date.strftime("%H:%M%p")%>
         </td>
         <td >
-           <%= appointment.end_date %>
+           <%=  appointment.end_date.strftime("%H:%M%p")%>
          </td>
 
       <td>
@@ -17,8 +17,5 @@
       </td>
       <td>
         <%= link_to "" , appointment_path(appointment),method: :delete, id:"edit_#{appointment.id}", class: 'btn btn-danger glyphicon glyphicon-remove ',data: { confirm: '¿Seguro que quiere eliminar este paciente?' }%>
-      </td>
-      <td>
-        <%= link_to "Consulta" , appointment_path(appointment),method: :delete, id:"edit_#{appointment.id}", class: 'btn btn-info ', data: { confirm: '¿Seguro que quiere eliminar este paciente?' }%>
       </td>
 </tr>
