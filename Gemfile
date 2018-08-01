@@ -39,3 +39,4 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'jquery-rails'
 gem 'gritter', '~> 1.2'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem "time_splitter"
