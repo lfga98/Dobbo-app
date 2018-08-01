@@ -6,7 +6,7 @@
         <%=  appointment.start_date.strftime("%Y/%m/%d") %>
       </td>
       <td>
-         <%= link_to truncate(appointment.name),appointment %>
+         <%= link_to truncate(appointment.observation),appointment %>
        </td>
        <td>
          <%=  appointment.start_date.strftime("%H:%M%p")%>

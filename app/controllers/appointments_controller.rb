@@ -7,7 +7,14 @@ class AppointmentsController < ApplicationController
   def new
     @appointment = Appointment.new
   end
-
+  def create
+      @appointment= Appointment.new(appointment_params)
+      if @appointment.save
+        redirect_to @appointment, notice: "La cita fue añadida satisfactoriamente!"
+      else
+        render :new
+      end
+  end
 
   def show
   end
@@ -18,7 +25,7 @@ class AppointmentsController < ApplicationController
               :id => apmt.id,
               :start_date => apmt.start_date.to_formatted_s(:db),
               :end_date => apmt.end_date.to_formatted_s(:db),
-              :name => apmt.name
+              :observation => apmt.observation
           }
         }
  end
@@ -28,11 +35,11 @@ class AppointmentsController < ApplicationController
    id = params["id"]
    start_date = params["start_date"]
    end_date = params["end_date"]
-   name = params["name"]
+   observation = params["observation"]
 
    case mode
      when "inserted"
-       apmt = Appointment.create :start_date => start_date, :end_date => end_date, :name => name,  :patient_id => 1
+       apmt = Appointment.create :start_date => start_date, :end_date => end_date, :observation => observation,  :patient_id => 1
 
        tid = apmt.id
 
@@ -44,7 +51,7 @@ class AppointmentsController < ApplicationController
        apmt = Appointment.find(id)
        apmt.start_date = start_date
        apmt.end_date = end_date
-       apmt.name = name
+       apmt.observation = observation
        apmt.patient_id = 1
        apmt.save
        tid = id
@@ -57,6 +64,10 @@ class AppointmentsController < ApplicationController
           }
  end
 
+ private
 
+ def appointment_params
+   params.require(:appointment).permit(:start_date,:end_date,:observation,:patient_id)
+ end
 
 end
