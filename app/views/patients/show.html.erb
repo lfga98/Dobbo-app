@@ -7,7 +7,7 @@
       <div>
             <h2 align="center" class="tittle"><%= @patient.full_name %> </h2>
         </div>
-        <div class="col-lg-12">
+        <div >
             <br>
             <br>
             <h3>Datos Generales</h3>
@@ -47,10 +47,9 @@
               <h4><strong>Correo Electronico:</strong></h4> <%= @patient.email  %>
           </div>
 
-
-          <div class="col-lg-12">
-              <br>
-              <br>
+          <div class="col-lg-11">
+            <br>
+            <br>
               <h3>Domicilio</h3>
               <hr>
           </div>
@@ -66,31 +65,34 @@
           <div class="col-lg-4">
             <br>
             <h4><strong>Ciudad</strong></h4> <%= @patient.city  %>
+            <br>
           </div>
           <div class="col-lg-4">
             <br>
             <h4><strong>Municipio</strong></h4> <%= @patient.mun  %>
+            <br>
           </div>
           <div class="col-lg-4">
             <br>
             <h4><strong>Estado</strong></h4> <%= @patient.county  %>
+            <br>
           </div>
 
-          <div class="col-lg-12">
-              <br>
-              <br>
-              <h3>Motivo de visita</h3>
-              <hr>
-          </div>
-          <div class="col-lg-10 col-md-offset-1 ">
+          <div class="col-lg-11">
+            <br>
+            <br>
+            <h3>Motivo de visita</h3>
+            <hr>
+          <div class="col-md-offset-1 ">
             <br>
           </h4> <%= @patient.reason_desc  %>
           </div>
+        </div>
 
     </div>
 
   </div>
-    <div class="col-lg-10 col-md-offset-10 ">
+    <div class="col-md-offset-10 ">
       <br>
       <br>
       <%= link_to 'Eliminar', patient_path(@patient), method: :delete, class: 'btn btn-danger',data: { confirm: '¿Seguro que quiere eliminar este paciente?' } %>
