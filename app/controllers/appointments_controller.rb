@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  before_action :set_appointment, only: [:show]
   protect_from_forgery with: :null_session
 
   def index
@@ -66,8 +67,16 @@ class AppointmentsController < ApplicationController
 
  private
 
- def appointment_params
-   params.require(:appointment).permit(:start_date,:end_date,:observation,:patient_id)
- end
+   def appointment_params
+     params.require(:appointment).permit(:start_date,:end_date,:observation,:patient_id)
+   end
 
+   def set_appointment
+     @appointment=Appointment.find(params[:id])
+     if current_user.patients.ids.include?(@appointment.patient_id)
+     else
+       redirect_to patients_path, notice: "No tiene permiso para realizar esta acción"
+     end
+
+   end
 end
