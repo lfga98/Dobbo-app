@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_appointment, only: [:show]
+  before_action :set_appointment, only: [:show,:edit]
   protect_from_forgery with: :null_session
 
   def index
@@ -18,6 +18,8 @@ class AppointmentsController < ApplicationController
   end
 
   def show
+  end
+  def edit
   end
 
   def data
