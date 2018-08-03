@@ -40,7 +40,7 @@ class AppointmentsController < ApplicationController
               :id => apmt.id,
               :start_date => apmt.start_date.to_formatted_s(:db),
               :end_date => apmt.end_date.to_formatted_s(:db),
-              :observation => apmt.observation
+              :text => apmt.patient.full_name
           }
         }
  end
@@ -50,11 +50,11 @@ class AppointmentsController < ApplicationController
    id = params["id"]
    start_date = params["start_date"]
    end_date = params["end_date"]
-   observation = params["observation"]
+   text = params["observation"]
 
    case mode
      when "inserted"
-       apmt = Appointment.create :start_date => start_date, :end_date => end_date, :observation => observation,  :patient_id => 1
+       apmt = Appointment.create :start_date => start_date, :end_date => end_date, :text => observation,  :patient_id => 1
 
        tid = apmt.id
 
@@ -66,7 +66,7 @@ class AppointmentsController < ApplicationController
        apmt = Appointment.find(id)
        apmt.start_date = start_date
        apmt.end_date = end_date
-       apmt.observation = observation
+       apmt.text = observation
        apmt.patient_id = 1
        apmt.save
        tid = id
