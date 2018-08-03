@@ -3,17 +3,15 @@ class AppointmentsController < ApplicationController
   protect_from_forgery with: :null_session
 
   def index
-    @appointments=nil
-    current_user.patients.all.each do |patient|
-      @appointments=patient.appointments.all
-    end
-
+    @appointments= current_user.appointments
   end
+
   def new
     @appointment = Appointment.new
   end
   def create
       @appointment= Appointment.new(appointment_params)
+      @appointment.user_id=current_user.id
       if @appointment.save
         redirect_to @appointment, notice: "La cita fue añadida satisfactoriamente!"
       else
