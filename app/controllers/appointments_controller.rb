@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_appointment, only: [:show,:edit]
+  before_action :set_appointment, only: [:show,:edit,:update]
   protect_from_forgery with: :null_session
 
   def index
@@ -18,10 +18,20 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-  end
-  def edit
+
   end
 
+  def edit
+
+  end
+
+  def update
+    if @appointment.update(appointment_params)
+      redirect_to @appointment,notice: 'La cita fue modificado satisfactoriamente'
+    else
+      render :edit
+    end
+  end
   def data
    appointments = Appointment.all
    render :json => appointments.map {|apmt| {
