@@ -37,4 +37,14 @@
       </div>
     </div>
 
+  </div>
+    <div class="col-md-offset-10 ">
+      <br>
+      <br>
+      <%= link_to 'Eliminar', appointment_path(@appointment), method: :delete, class: 'btn btn-danger',data: { confirm: '¿Seguro que quiere eliminar esta cita?' } %>
+      <%= link_to 'Editar', edit_appointment_path(@appointment), class: 'btn btn-primary' %>
+      <br>
+      <br>
+    </div>
+
 </div>

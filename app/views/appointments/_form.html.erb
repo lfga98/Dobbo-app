@@ -11,7 +11,7 @@
         <h4>Datos de la cita</h4>
         <hr>
         <h5><%= f.label :"Paciente: ", class: "col-sm-7 control-label" %></h5>
-        <%= f.collection_select(:patient_id, Appointment.last.patient.user.patients, :id, :full_name ,class: 'form-control') %>
+        <%= f.collection_select(:patient_id, current_user.patients, :id, :full_name ,class: 'form-control') %>
       </div>
       <div class="form-group ">
         <h5><%= f.label :"Fecha y hora de inicio: ", class: "col-sm-7 control-label" %></h5>

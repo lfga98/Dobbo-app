@@ -3,7 +3,11 @@ class AppointmentsController < ApplicationController
   protect_from_forgery with: :null_session
 
   def index
-    @appointments = Appointment.all
+    @appointments=nil
+    current_user.patients.all.each do |patient|
+      @appointments=patient.appointments.all
+    end
+
   end
   def new
     @appointment = Appointment.new
