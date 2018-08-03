@@ -1,5 +1,5 @@
 <tr>
-      <td>
+      <td class="hidden-xs">
         <%=  appointment.id %>
       </td>
       <td>
@@ -11,7 +11,7 @@
        <td>
          <%=  appointment.start_date.strftime("%H:%M%p")%>
         </td>
-        <td class="hidden-xs" >
+        <td >
            <%=  appointment.end_date.strftime("%H:%M%p")%>
          </td>
          <td class="hidden-xs" >
@@ -20,10 +20,10 @@
         <td class="hidden-xs">
 
        </td>
-      <td>
+      <td class="hidden-xs">
         <%= link_to "" , edit_appointment_path(appointment), id:"edit_#{appointment.id}", class: 'btn btn-warning glyphicon glyphicon-pencil'%>
       </td>
-      <td>
+      <td class="hidden-xs">
         <%= link_to "" , appointment_path(appointment),method: :delete, id:"edit_#{appointment.id}", class: 'btn btn-danger glyphicon glyphicon-remove ',data: { confirm: '¿Seguro que quiere eliminar este paciente?' }%>
       </td>
 </tr>
