@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
   protect_from_forgery with: :null_session
 
   def index
-    @appointments= current_user.appointments
+    @appointments= current_user.appointments.order("start_date ").page(params[:page]).per(10)
   end
 
   def new
