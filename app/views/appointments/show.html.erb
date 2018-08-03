@@ -16,7 +16,7 @@
     <div class="col-lg-3">
         <% apomt_today =@appointment.start_date%>
         <% apomt_end_today =@appointment.end_date%>
-        <h4><strong>Fecha</strong></h4> <%= apomt_today.day %> / <%= apomt_today.month %> / <%= apomt_today.year %>
+        <h4><strong>Fecha</strong></h4> <%= apomt_today.strftime("%d/%m/%Y") %> 
     </div>
     <div class="col-lg-3">
         <h4><strong>Hora inicio</strong></h4> <%= apomt_today.strftime("%H:%M %p")%>

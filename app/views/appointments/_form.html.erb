@@ -10,20 +10,20 @@
       <div class="form-group ">
         <h4>Datos de la cita</h4>
         <hr>
-        <h5><%= f.label :"Paciente: ", class: "col-sm-7 control-label" %></h5>
+        <h5><%= f.label :"Paciente: ", class: "col-sm-8 control-label" %></h5>
         <%= f.collection_select(:patient_id, current_user.patients, :id, :full_name ,class: 'form-control') %>
       </div>
       <div class="form-group ">
-        <h5><%= f.label :"Fecha y hora de inicio: ", class: "col-sm-7 control-label" %></h5>
-        <%= f.date_field  :start_date %>
-        <%= f.time_field  :start_date %>
+        <h5><%= f.label :"Fecha y hora de inicio: ", class: "col-sm-6 control-label" %></h5>
+        <%= f.datetime_select  :start_date %>
+
 
         <br>
       </div>
       <div class="form-group ">
-        <h5><%= f.label :"Hora de fin: ", class: "col-sm-7 control-label" %></h5>
-        <%= f.date_field  :end_date %>
-        <%= f.time_field  :end_date %>
+        <h5><%= f.label :"Hora de fin: ", class: "col-sm-6 control-label" %></h5>
+        <%= f.datetime_select  :end_date %>
+
 
         <br>
       </div>

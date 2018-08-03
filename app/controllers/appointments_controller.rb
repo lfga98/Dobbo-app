@@ -9,6 +9,7 @@ class AppointmentsController < ApplicationController
   def new
     @appointment = Appointment.new
   end
+  
   def create
       @appointment= Appointment.new(appointment_params)
       @appointment.user_id=current_user.id

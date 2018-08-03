@@ -3,7 +3,7 @@
         <%=  appointment.id %>
       </td>
       <td>
-        <%=  appointment.start_date.strftime("%Y/%m/%d") %>
+        <%=  appointment.start_date.strftime("%d/%m/%Y") %>
       </td>
       <td>
          <%= link_to truncate(appointment.patient.full_name),appointment %>
