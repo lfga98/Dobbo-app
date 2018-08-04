@@ -5,7 +5,6 @@
   <div class="col-lg-8">
     <h3>Citas para el día de hoy</h3>
     <hr>
-    <br>
     <% @today_appointments.each do |today_apmt| %>
   	<div class='homepage-block col-md-3'>
   		<h4>
@@ -13,18 +12,19 @@
   		</h4>
 
   		<p>
-  			<span class='pending-details'>Hora de inicio:</span> <%= today_apmt.start_date %>
+  			<span class='pending-details'>Fecha:</span> <%= today_apmt.start_date.strftime("%d/%m/%Y") %>
   		</p>
 
   		<p>
-  			<span class='pending-details'>Confirmed at:</span> <%= today_apmt.end_date  %>
+  			<span class='pending-details'>Hora:</span> <%=today_apmt.start_date.strftime("%H:%M %p")  %>
   		</p>
-      <div class='col-md-6 column'>
-				<%= link_to 'Ver', root_path, class: 'btn btn-success btn-block'  %>
+      <p>
+  			<span class='pending-details'>Hora fin:</span> <%=today_apmt.end_date.strftime("%H:%M %p")  %>
+  		</p>
+      <div class='col-md-11 column'>
+				<%= link_to 'Consulta', root_path, class: 'btn btn-success btn-block'  %>
       </div>
-      <div class='col-md-6 column'>
-				<%= link_to 'Ver', root_path, class: 'btn btn-warning btn-block' %>
-      </div>
+
 
   	</div>
   <% end %>
