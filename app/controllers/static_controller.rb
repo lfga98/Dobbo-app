@@ -1,5 +1,6 @@
 class StaticController < ApplicationController
   def home
+    @today_appointments=current_user.appointments.where(start_date:Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
   end
 
   def diary

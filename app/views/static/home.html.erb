@@ -3,6 +3,30 @@
     <%= render 'shared/sidenavbar'%>
 <div class="row">
   <div class="col-lg-8">
-    
+    <h3>Citas para el día de hoy</h3>
+    <hr>
+    <br>
+    <% @today_appointments.each do |today_apmt| %>
+  	<div class='homepage-block col-md-3'>
+  		<h4>
+  			<%= today_apmt.patient.full_name %>
+  		</h4>
+
+  		<p>
+  			<span class='pending-details'>Hora de inicio:</span> <%= today_apmt.start_date %>
+  		</p>
+
+  		<p>
+  			<span class='pending-details'>Confirmed at:</span> <%= today_apmt.end_date  %>
+  		</p>
+      <div class='col-md-6 column'>
+				<%= link_to 'Consultar', root_path, class: 'btn btn-success btn-block'  %>
+      </div>
+      <div class='col-md-6 column'>
+				<%= link_to 'Ver', root_path, class: 'btn btn-warning btn-block' %>
+      </div>
+
+  	</div>
+  <% end %>
   </div>
 </div>
