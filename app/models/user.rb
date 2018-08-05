@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :cp, length: { is: 5 }
 
   def full_name
-  		return  first_name + " "+ last_name + " " +maternal_surname
+  		return  tittle+" "+first_name + " "+ last_name + " " +maternal_surname
   end
 
 
