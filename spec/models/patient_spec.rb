@@ -39,46 +39,7 @@ RSpec.describe Patient, type: :model do
       patient.maternal_surname = nil
       expect(patient).to_not be_valid
     end
-    it "has to have a date of birth" do
-      patient.date_birth = nil
-      expect(patient).to_not be_valid
-    end
-    it 'has to have a gender' do
-      patient.gender=nil
-      expect(patient).to_not be_valid
-    end
-    it 'has to have a civil status' do
-      patient.civil_status=nil
-      expect(patient).to_not be_valid
-    end
-    it 'has to have a scholarship' do
-      patient.scholarship=nil
-      expect(patient).to_not be_valid
-    end
-    it 'has to have a occupation' do
-      patient.occupation=nil
-      expect(patient).to_not be_valid
-    end
-    it 'has to have a street' do
-      patient.street=nil
-      expect(patient).to_not be_valid
-    end
-    it 'has to have a suburb' do
-      patient.suburb=nil
-      expect(patient).to_not be_valid
-    end
-    it 'has to have a city' do
-      patient.city=nil
-      expect(patient).to_not be_valid
-    end
-    it 'has to have a mun' do
-      patient.scholarship=nil
-      expect(patient).to_not be_valid
-    end
-    it 'has to have a county' do
-      patient.scholarship=nil
-      expect(patient).to_not be_valid
-    end
+
     it 'has to have a telephone' do
       patient.telephone=nil
       expect(patient).to_not be_valid

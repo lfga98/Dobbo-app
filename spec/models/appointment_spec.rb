@@ -25,7 +25,7 @@ RSpec.describe Appointment, type: :model do
       Appointment.create(
         start_date: "5-07-2018 10:00:00",
         end_date: "5-07-2018 15:00:00",
-        name: "Juanito",
+        observation: "Juanito",
         patient_id: patient.id
       )
   end
