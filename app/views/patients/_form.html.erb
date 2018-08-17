@@ -24,8 +24,19 @@
         <%= f.text_field  :maternal_surname, class: "form-control" %>
       </div>
 
+      <div class="form-group">
+        <%= f.label :"telefono*", class: "col-sm-4 control-label" %>
+        <%= f.text_field  :telephone, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :"correo_electronico*", class: "col-sm-4 control-label" %>
+        <%= f.text_field  :email, class: "form-control" %>
+      </div>
+      <br>
+      <hr>
+      <br>
       <div class="form-group col-lg-6">
-        <%= f.label :"fecha_de_nacimiento*", class: "col-sm-6 control-label" %>
+        <%= f.label :"fecha_de_nacimiento", class: "col-sm-6 control-label" %>
         <%= f.date_field  :date_birth, class: "form-control " %>
 
       </div>
@@ -39,7 +50,7 @@
       <div class="form-group col-lg-8">
         <br>
         <br>
-        <%= f.label :"estado_civil*", class: "col-sm-4 control-label" %>
+        <%= f.label :"estado_civil", class: "col-sm-4 control-label" %>
         <%= f.select :civil_status, ['Soltero', 'Casado'], class: "form-control" %>
       </div>
 
@@ -47,31 +58,24 @@
       <div class="form-group col-lg-4">
         <br>
         <br>
-        <%= f.label :"sexo*", class: "col-sm-4 control-label" %>
+        <%= f.label :"sexo", class: "col-sm-4 control-label" %>
         <%= f.select :gender, ['Masculino', 'Femenino'], class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :"escolaridad*", class: "col-sm-4 control-label" %>
+        <%= f.label :"escolaridad", class: "col-sm-4 control-label" %>
         <%= f.text_field  :scholarship, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :"ocupación*", class: "col-sm-4 control-label" %>
+        <%= f.label :"ocupación", class: "col-sm-4 control-label" %>
         <%= f.text_field  :occupation, class: "form-control" %>
       </div>
-      <div class="form-group">
-        <%= f.label :"telefono*", class: "col-sm-4 control-label" %>
-        <%= f.text_field  :telephone, class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :"correo_electronico", class: "col-sm-4 control-label" %>
-        <%= f.text_field  :email, class: "form-control" %>
-      </div>
+
       <div class="form-group">
         <br>
         <br>
         <h4>Domicilio</h4>
         <hr>
-        <%= f.label :"calle*", class: "col-sm-4 control-label" %>
+        <%= f.label :"calle", class: "col-sm-4 control-label" %>
         <%= f.text_field  :street, class: "form-control" %>
       </div>
       <div class="form-group">
@@ -79,19 +83,19 @@
         <%= f.number_field  :number, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :"colonia*", class: "col-sm-4 control-label" %>
+        <%= f.label :"colonia", class: "col-sm-4 control-label" %>
         <%= f.text_field  :suburb, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :"ciudad*", class: "col-sm-4 control-label" %>
+        <%= f.label :"ciudad", class: "col-sm-4 control-label" %>
         <%= f.text_field  :city, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :"municipio*", class: "col-sm-4 control-label" %>
+        <%= f.label :"municipio", class: "col-sm-4 control-label" %>
         <%= f.text_field  :mun, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :"estado*", class: "col-sm-4 control-label" %>
+        <%= f.label :"estado", class: "col-sm-4 control-label" %>
         <%= f.text_field  :county, class: "form-control" %>
       </div>
 
