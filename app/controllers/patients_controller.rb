@@ -25,10 +25,14 @@ class PatientsController < ApplicationController
   end
 
   def show
-    @patient.age=((Date.today - @patient.date_birth)/365).floor
+    if @patient.date_birth
+      @patient.age=((Date.today - @patient.date_birth)/365).floor
+    end
   end
   def edit
-    @patient.age=((Date.today - @patient.date_birth)/365).floor
+    if @patient.date_birth
+      @patient.age=((Date.today - @patient.date_birth)/365).floor
+    end
   end
 
   def destroy
