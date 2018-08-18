@@ -16,32 +16,52 @@
           <div class="col-lg-4">
       		    <h4><strong>Número de paciente</strong></h4> <%= @patient.id %>
           </div>
+
+          <% if @patient.age %>
           <div class="col-lg-4">
       		    <h4><strong>Edad</strong></h4> <%= @patient.age %>
           </div>
+          <%end%>
+
+          <% if @patient.date_birth %>
           <div class="col-lg-4">
       		    <h4><strong>Fecha de nacimiento</strong></h4> <%= @patient.date_birth %>
           </div>
+          <%end%>
+
+          <% if @patient.gender %>
           <div class="col-lg-4">
             <br>
       		    <h4><strong>Sexo</strong></h4> <%= @patient.gender %>
           </div>
+          <%end%>
+
+          <% if @patient.scholarship.nil? %>
           <div class="col-lg-4">
             <br>
       		    <h4><strong>Escolaridad</strong></h4> <%= @patient.scholarship  %>
           </div>
+          <% end %>
+
+          <% if @patient.occupation.nil? %>
           <div class="col-lg-4">
             <br>
       		    <h4><strong>Ocupación</strong></h4> <%= @patient.occupation  %>
           </div>
+          <%end%>
+
+
           <div class="col-lg-4">
             <br>
               <h4><strong>Estado civil:</strong></h4> <%= @patient.civil_status  %>
           </div>
+
+
           <div class="col-lg-4">
             <br>
       		    <h4><strong>Telefono:</strong></h4> <%= @patient.telephone  %>
           </div>
+
           <div class="col-lg-4">
             <br>
               <h4><strong>Correo Electronico:</strong></h4> <%= @patient.email  %>
@@ -53,41 +73,60 @@
               <h3>Domicilio</h3>
               <hr>
           </div>
+
+          <% if @patient.street.nil? %>
           <div class="col-lg-4">
             <h4><strong>Calle</strong></h4> <%= @patient.street  %>
           </div>
+          <%end%>
+
+          <% if @patient.number %>
           <div class="col-lg-4">
             <h4><strong>Número</strong></h4> <%= @patient.number  %>
           </div>
+          <%end%>
+
+          <% if @patient.suburb.nil? %>
           <div class="col-lg-4">
             <h4><strong>Colonia</strong></h4> <%= @patient.suburb  %>
           </div>
+          <%end%>
+          <% if @patient.city.nil? %>
           <div class="col-lg-4">
             <br>
             <h4><strong>Ciudad</strong></h4> <%= @patient.city  %>
             <br>
           </div>
+          <%end%>
+
+          <% if @patient.mun.nil? %>
           <div class="col-lg-4">
             <br>
             <h4><strong>Municipio</strong></h4> <%= @patient.mun  %>
             <br>
           </div>
+          <%end%>
+
+          <% if @patient.county.nil? %>
           <div class="col-lg-4">
             <br>
             <h4><strong>Estado</strong></h4> <%= @patient.county  %>
             <br>
           </div>
+          <%end%>
 
           <div class="col-lg-11">
             <br>
             <br>
             <h3>Motivo de visita</h3>
             <hr>
-          <div class="col-md-offset-1 ">
-            <br>
-          </h4> <%= @patient.reason_desc  %>
+          <% if @patient.reason_desc.nil? %>
+            <div class="col-md-offset-1 ">
+              <br>
+            </h4> <%= @patient.reason_desc  %>
+            </div>
+          <%end%>
           </div>
-        </div>
 
     </div>
 
