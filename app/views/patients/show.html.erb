@@ -36,14 +36,14 @@
           </div>
           <%end%>
 
-          <% if @patient.scholarship.nil? %>
+          <% if !@patient.scholarship.eql?("") %>
           <div class="col-lg-4">
             <br>
       		    <h4><strong>Escolaridad</strong></h4> <%= @patient.scholarship  %>
           </div>
           <% end %>
 
-          <% if @patient.occupation.nil? %>
+          <% if !@patient.occupation.eql?("") %>
           <div class="col-lg-4">
             <br>
       		    <h4><strong>Ocupación</strong></h4> <%= @patient.occupation  %>
@@ -74,7 +74,7 @@
               <hr>
           </div>
 
-          <% if @patient.street.nil? %>
+          <% if !@patient.street.eql?("") %>
           <div class="col-lg-4">
             <h4><strong>Calle</strong></h4> <%= @patient.street  %>
           </div>
@@ -86,12 +86,13 @@
           </div>
           <%end%>
 
-          <% if @patient.suburb.nil? %>
+          <% if !@patient.suburb.eql?("") %>
           <div class="col-lg-4">
             <h4><strong>Colonia</strong></h4> <%= @patient.suburb  %>
           </div>
           <%end%>
-          <% if @patient.city.nil? %>
+
+          <% if !@patient.city.eql?("") %>
           <div class="col-lg-4">
             <br>
             <h4><strong>Ciudad</strong></h4> <%= @patient.city  %>
@@ -99,7 +100,7 @@
           </div>
           <%end%>
 
-          <% if @patient.mun.nil? %>
+          <% if !@patient.mun.eql?("") %>
           <div class="col-lg-4">
             <br>
             <h4><strong>Municipio</strong></h4> <%= @patient.mun  %>
@@ -107,7 +108,7 @@
           </div>
           <%end%>
 
-          <% if @patient.county.nil? %>
+          <% if !@patient.county.eql?("") %>
           <div class="col-lg-4">
             <br>
             <h4><strong>Estado</strong></h4> <%= @patient.county  %>
@@ -120,7 +121,7 @@
             <br>
             <h3>Motivo de visita</h3>
             <hr>
-          <% if @patient.reason_desc.nil? %>
+          <% if !@patient.reason_desc.eql?("") %>
             <div class="col-md-offset-1 ">
               <br>
             </h4> <%= @patient.reason_desc  %>
