@@ -1,7 +1,7 @@
 class Patient < ApplicationRecord
   belongs_to :user,optional: true
   validates_presence_of :first_name,:maternal_surname,:telephone,:email
-  has_many :appointments
+  has_many :appointments, dependent: :delete_all
   validates :telephone, length: { is: 10 }
   validates :telephone, numericality: { only_integer: true }
 
