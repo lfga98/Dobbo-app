@@ -1,6 +1,6 @@
 class Patient < ApplicationRecord
   belongs_to :user,optional: true
-  validates_presence_of :first_name,:last_name,:date_birth,:maternal_surname,:gender,:civil_status, :scholarship, :occupation, :street, :suburb, :city , :mun, :county , :telephone
+  validates_presence_of :first_name,:maternal_surname,:telephone,:email
   has_many :appointments
   validates :telephone, length: { is: 10 }
   validates :telephone, numericality: { only_integer: true }
