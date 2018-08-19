@@ -147,7 +147,7 @@
                 <span class='pending-details'>Hora Fin:</span> <%= apmt.end_date.strftime("%H:%M %p") %>
               </p>
               <div class='col-md-11 column'>
-                <%= link_to 'Detalles', root_path, class: 'btn btn-info btn-block'  %>
+                <%= link_to 'Detalles',appointment_path(apmt), id:"edit_#{apmt.id}", class: 'btn btn-info btn-block'  %>
               </div>
             </div>
           <%end%>
