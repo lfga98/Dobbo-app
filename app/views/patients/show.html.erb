@@ -128,9 +128,29 @@
             </div>
           <%end%>
           </div>
+          <div class="col-lg-11">
+            <br>
+            <br>
+              <h3>Todas las citas del paciente</h3>
+              <hr>
+          </div>
 
-          <%= @patient.appointments.inspect %>
-
+          <% @patient.appointments.each do |apmt| %>
+            <div class='homepage-block col-md-3'>
+              <p>
+                <span class='pending-details'>Fecha:</span> <%= apmt.start_date.strftime("%d/%m/%Y") %>
+              </p>
+              <p>
+                <span class='pending-details'>Hora Incio:</span> <%= apmt.start_date.strftime("%H:%M %p") %>
+              </p>
+              <p>
+                <span class='pending-details'>Hora Fin:</span> <%= apmt.end_date.strftime("%H:%M %p") %>
+              </p>
+              <div class='col-md-11 column'>
+                <%= link_to 'Detalles', root_path, class: 'btn btn-info btn-block'  %>
+              </div>
+            </div>
+          <%end%>
 
     </div>
 
