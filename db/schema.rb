@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_03_055900) do
+ActiveRecord::Schema.define(version: 2018_08_25_015427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 2018_08_03_055900) do
     t.bigint "user_id"
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
     t.index ["user_id"], name: "index_appointments_on_user_id"
+  end
+
+  create_table "medical_histories", force: :cascade do |t|
+    t.boolean "diarrhea"
+    t.boolean "constipation"
+    t.boolean "gastritis"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "patients", force: :cascade do |t|
@@ -49,6 +57,8 @@ ActiveRecord::Schema.define(version: 2018_08_03_055900) do
     t.string "email"
     t.string "reason_desc"
     t.integer "number"
+    t.bigint "medical_history_id"
+    t.index ["medical_history_id"], name: "index_patients_on_medical_history_id"
     t.index ["user_id"], name: "index_patients_on_user_id"
   end
 
@@ -83,5 +93,6 @@ ActiveRecord::Schema.define(version: 2018_08_03_055900) do
 
   add_foreign_key "appointments", "patients"
   add_foreign_key "appointments", "users"
+  add_foreign_key "patients", "medical_histories"
   add_foreign_key "patients", "users"
 end
